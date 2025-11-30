@@ -18,11 +18,11 @@ export class EnvelopeComponent {
      const pers = this.personneService.personneChoisie()?.nom;
 
   if (pers === 'Noélie') {
-    return `Je t'offre deux journées au parc Le PAL, avec accompagné de Sullyvan, ta maman et de moi !
+    return `Je t'offre deux journées au parc Le PAL, avec accompagné de Sullyvan, ta maman et Sébastien !
 Tu pourras à la fois y découvrir un tas d'animaux (Girafes, perroquets, crocodiles,...), mais également y faire toutes les attractions que tu veux !
 Le parc est fermé en hiver, donc ce sera pour plus tard, quand tout sera ouvert.`;
   } else if (pers === 'Sullyvan') {
-    return `Je t'offre deux journées au parc Le PAL, avec accompagné de Noélie, ta maman et de moi !
+    return `Je t'offre deux journées au parc Le PAL, avec accompagné de Noélie, ta maman et Sébastien !
 Tu pourras à la fois y découvrir un tas d'animaux (Loups, hippopotames, phoques,...), mais également y faire toutes les attractions que tu veux !
 Le parc est fermé en hiver, donc ce sera pour plus tard, quand tout sera ouvert.`;
   } else {
