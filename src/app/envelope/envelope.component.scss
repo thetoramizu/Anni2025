@@ -1,15 +1,10 @@
 .gift-wrapper {
-  position: relative;
-  width: 600px;
-  height: 600px;
   cursor: pointer;
 }
 
 .billet {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
+  width: 100%;
+  transform: translate(50%, -100%) scale(0);
   background: #fff6c0;
   border: 2px solid #ff5a5f;
   padding: 20px 30px;
@@ -21,7 +16,7 @@
 }
 
 .billet.open {
-  transform: translate(-50%, -50%) scale(1);
+  transform:  scale(1);
 }
 
 .confetti-container {
@@ -57,13 +52,10 @@
 .gift-wrapper {
   width: 100%;
   max-width: 600px; /* largeur maximale sur desktop */
-  margin: 0 auto;
 }
 
 .icon {
-  width: 300px;       /* taille maximale souhaitée */
   max-width: 100%;    /* ne dépasse jamais l'écran */
   height: auto;       /* conserve les proportions */
   display: block;     /* pour éviter les espaces indésirables */
-  margin: 0 auto;     /* centrer */
 }
