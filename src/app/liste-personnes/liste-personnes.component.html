@@ -1,21 +1,51 @@
 
 
 
+@for (personne of anniToday(); track personne) {
+  @if(personneService.personneChoisie() === personne) {
+  <div class="card">
+    <div class="card-text">
+      🎉 Joyeux anniversaire {{ personne.nom }} ! 🎉<br>
+      Appuie sur l'enveloppe pour découvrir ton cadeau !
+    </div>
+    <app-envelope></app-envelope>
+  </div>
+  } @else {
 
-@for (personne of anniToday(); track personne ) {
+  <!-- <div class="card">
+    <div class="card-text">
+       {{ personneService.personneChoisie()?.nom }}  <br>
+      Appuie sur l'enveloppe pour découvrir ton cadeau !
+    </div>
+    <app-envelope></app-envelope>
+  </div> -->
 
-<div>
-  <div>
-Joyeux anniversaire {{ personne.nom}} !
-Appuie sur l'enveloppe pour découvrir ton cadeau !
 
-</div>
-<app-envelope></app-envelope>
-</div>
+    <div class="card past-birthday">
+    <div class="card-text">
+      {{ personne.nom }}, C'est ton anniversaire, ouvre ton cadeau !
+    </div>
+    <button class="gift-btn" (click)="chooseWho(personne)">Découvrir le cadeau</button>
+  </div>
+  }
+
 }
-
 
 @for (personne of notToday(); track personne) {
-  <div>{{personne.nom}}, ton anniversaire est déjà passé, mais tu as aussi droit à ton cadeau !</div>
 
-}
+   @if(personneService.personneChoisie() === personne) {
+    <div class="card past-birthday">
+ <div class="card-text">
+       {{ personneService.personneChoisie()?.nom }}  <br>
+      Appuie sur l'enveloppe pour découvrir ton cadeau !
+    </div>
+    <app-envelope></app-envelope>
+    </div>
+   } @else {
+  <div class="card past-birthday">
+    <div class="card-text">
+      {{ personne.nom }}, ton anniversaire est déjà passé, mais tu as aussi droit à ton cadeau !
+    </div>
+    <button class="gift-btn" (click)="chooseWho(personne)">Découvrir le cadeau</button>
+  </div>
+}}
