@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, signal } from '@angular/core';
+import { EnvelopeComponent } from "./envelope/envelope.component";
+import {  ListePersonnesComponent } from "./liste-personnes/liste-personnes.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  imports: [EnvelopeComponent,  ListePersonnesComponent]
 })
 export class AppComponent {
-  title = 'Anniversaires2025';
+
 }

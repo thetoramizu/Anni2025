@@ -1,0 +1,27 @@
+
+
+
+
+<div class="gift-wrapper" (click)="toggleOpen()">
+  <!-- SVG du cadeau -->
+<img [src]="personneService.personneChoisie()?.svg" width="600" alt="Cadeau">
+
+
+  <!-- Billet au centre du cadeau -->
+  <div class="billet" [class.open]="isOpen">
+    <img  width="300" height="200"  src="assets/pal_no.png">
+
+    {{ textBillet()}}
+  </div>
+
+  <!-- Confettis -->
+   @if(isOpen) {
+  <div class="confetti-container" >
+
+    @for(c of confettis ; track c) {
+
+
+
+    <span  [style]="c.style"></span>}
+  </div>}
+</div>

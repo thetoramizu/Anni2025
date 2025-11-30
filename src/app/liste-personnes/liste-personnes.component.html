@@ -1,0 +1,21 @@
+
+
+
+
+@for (personne of anniToday(); track personne ) {
+
+<div>
+  <div>
+Joyeux anniversaire {{ personne.nom}} !
+Appuie sur l'enveloppe pour découvrir ton cadeau !
+
+</div>
+<app-envelope></app-envelope>
+</div>
+}
+
+
+@for (personne of notToday(); track personne) {
+  <div>{{personne.nom}}, ton anniversaire est déjà passé, mais tu as aussi droit à ton cadeau !</div>
+
+}
