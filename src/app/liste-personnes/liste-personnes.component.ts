@@ -35,6 +35,8 @@ export class ListePersonnesComponent implements OnInit {
   ngOnInit() {
     if(this.anniToday().length > 0) {
       this.chooseWho(this.anniToday()[0]);
+    } else {
+      this.chooseWho(this.notToday()[0]);
     }
   }
 
