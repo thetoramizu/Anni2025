@@ -1,22 +1,44 @@
 .gift-wrapper {
   cursor: pointer;
+  position: relative;
+  width: 100%;
+  max-width: 600px; /* limite la largeur sur desktop */
+  margin: 0 auto; /* centrer horizontalement */
+  box-sizing: border-box; /* pour que padding + border ne dépassent pas */
+}
+
+.gift-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 .billet {
-  width: 100%;
-  transform: translate(50%, -100%) scale(0);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
   background: #fff6c0;
   border: 2px solid #ff5a5f;
-  padding: 20px 30px;
+  padding: 2% 5%; /* padding en % pour responsive */
   border-radius: 12px;
   text-align: center;
   font-weight: bold;
   z-index: 10;
   transition: transform 0.5s ease-out;
+  width: 80%;
+  max-width: 300px; /* ne dépasse jamais */
+  box-sizing: border-box; /* important pour le scaling */
 }
 
 .billet.open {
-  transform:  scale(1);
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.billet img {
+  width: 100%; /* image à l'intérieur du billet prend toute la largeur */
+  height: auto;
+  display: block;
 }
 
 .confetti-container {
@@ -48,14 +70,7 @@
   }
 }
 
-
-.gift-wrapper {
-  width: 100%;
-  max-width: 600px; /* largeur maximale sur desktop */
-}
-
-.icon {
-  max-width: 100%;    /* ne dépasse jamais l'écran */
-  height: auto;       /* conserve les proportions */
-  display: block;     /* pour éviter les espaces indésirables */
+/* texte responsive */
+.billet {
+  font-size: clamp(12px, 2vw, 18px);
 }
