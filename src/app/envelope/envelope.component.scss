@@ -74,3 +74,7 @@
 .billet {
   font-size: clamp(12px, 2vw, 18px);
 }
+
+.billet-text {
+  white-space: pre-line; /* Les \n deviennent des retours à la ligne */
+}

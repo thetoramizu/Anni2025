@@ -15,12 +15,21 @@ export class EnvelopeComponent {
    confettis: any[] = [];
 
    textBillet = computed(() => {
-    return this.personneService.personneChoisie()?.nom === 'Noélie' ?
-    'Je t\'offre deux journée au parc Le PAL, avec accompagné de Sullyvan, ta maman et de moi ! Tu pourras à la fois y découvrir un tas d\'animaux (Girafes, perroquets, crocodiles,...), mais également y faire toutes les attractions que tu veux ! </br> Le parc est fermé en hiver, donc ce sera pour plus tard, quand tout sera ouvert.' :
-    this.personneService.personneChoisie()?.nom === 'Sullyvan' ?
-    'Je t\'offre deux journée au parc Le PAL, avec accompagné de Noélie, ta maman et de moi ! Tu pourras à la fois y découvrir un tas d\'animaux (Loups, hippopotames, phoques,...), mais également y faire toutes les attractions que tu veux ! </br> Le parc est fermé en hiver, donc ce sera pour plus tard, quand tout sera ouvert.' :
-    'Super, tu es '
+     const pers = this.personneService.personneChoisie()?.nom;
 
+  if (pers === 'Noélie') {
+    return `Je t'offre deux journées au parc Le PAL, avec accompagné de Sullyvan, ta maman et de moi !
+Tu pourras à la fois y découvrir un tas d'animaux (Girafes, perroquets, crocodiles,...), mais également y faire toutes les attractions que tu veux !
+Le parc est fermé en hiver, donc ce sera pour plus tard, quand tout sera ouvert.`;
+  } else if (pers === 'Sullyvan') {
+    return `Je t'offre deux journées au parc Le PAL, avec accompagné de Noélie, ta maman et de moi !
+Tu pourras à la fois y découvrir un tas d'animaux (Loups, hippopotames, phoques,...), mais également y faire toutes les attractions que tu veux !
+Le parc est fermé en hiver, donc ce sera pour plus tard, quand tout sera ouvert.`;
+  } else {
+    return `Tu as droit à deux journées au PAL, offertes par mes soins !
+Mais tu seras obligée d'y aller avec tes enfants et moi si tu veux en profiter.
+Certainement en avril, on se prendra du temps pour organiser ça bientôt !`;
+  }
    })
 
   toggleOpen() {
